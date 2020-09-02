@@ -14,14 +14,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"/>
     <HorizontalScrollView
-        android:id="@+id/hScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/heading"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"/>
+        android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/hScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"/>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
