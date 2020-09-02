@@ -1,6 +1,4 @@
-package com.example.pnntest
-
-import android.util.Log
+package com.example.pnntest.Model
 
 class FilmRepository(val api: APIService): BaseRepository() {
 

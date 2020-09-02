@@ -1,4 +1,4 @@
-package com.example.pnntest
+package com.example.pnntest.Model
 
 import retrofit2.Response
 import java.io.IOException

@@ -1,4 +1,4 @@
-package com.example.pnntest
+package com.example.pnntest.Model
 
 import java.lang.Exception
 

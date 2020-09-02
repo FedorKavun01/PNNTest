@@ -1,7 +1,8 @@
-package com.example.pnntest
+package com.example.pnntest.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pnntest.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

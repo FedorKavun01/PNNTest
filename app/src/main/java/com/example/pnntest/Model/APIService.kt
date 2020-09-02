@@ -1,4 +1,4 @@
-package com.example.pnntest
+package com.example.pnntest.Model
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
