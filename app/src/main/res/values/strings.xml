@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PNNTest</string>
+    <string name="heading">The library of my favorite movies</string>
 </resources>
