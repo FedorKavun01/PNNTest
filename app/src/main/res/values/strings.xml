@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PNNTest</string>
     <string name="heading">The library of my favorite movies</string>
-    <string name="imbd">IMBD: </string>
+    <string name="imbd">IMBD:</string>
     <string name="mainActivityLable">Movies</string>
     <string name="released">Released</string>
     <string name="runtime">Runtime</string>

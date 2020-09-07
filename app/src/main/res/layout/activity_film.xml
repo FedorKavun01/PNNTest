@@ -78,11 +78,29 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/directorLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/ratingHS"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/runtime" />
+        <TextView
+            android:id="@+id/directorTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/storyLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/releasedLL"
+        app:layout_constraintTop_toBottomOf="@id/directorLL"
         app:layout_constraintLeft_toLeftOf="parent">
 
         <TextView

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"/>
 <!--TODO add round IV-->
     <TextView
-        android:id="@+id/ratingMarkTV"
+        android:id="@+id/actorNameTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

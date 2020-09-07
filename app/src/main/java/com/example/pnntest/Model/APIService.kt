@@ -8,8 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface APIService {
+    // TODO: 03.09.2020 add @Query (not require)
     @GET("dbs/movies.json?print=pretty")
-    fun getFilm() : Deferred<Response<Array<Film>>>
+    fun getFilms() : Deferred<Response<Array<Film>>>
 }
 
 object NetworkService {

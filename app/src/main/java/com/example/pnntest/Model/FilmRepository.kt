@@ -10,13 +10,13 @@ class FilmRepository(val api: APIService): BaseRepository() {
         val instance = safeApiCall(call = {api.getFilms().await()}, "")
 
         return if (instance != null) {
-//            Log.d(TAG, "getFilm: successful")
+            Log.d(TAG, "getFilm: successful")
             for (film in instance) {
                 film.prepareFilm()
             }
             instance
         } else {
-//            Log.d(TAG, "getFilm: error")
+            Log.d(TAG, "getFilm: error")
             null
         }
     }
