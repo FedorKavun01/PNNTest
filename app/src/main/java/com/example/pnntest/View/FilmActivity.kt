@@ -3,10 +3,10 @@ package com.example.pnntest.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.marginLeft
 import com.example.pnntest.Model.Film
 import com.example.pnntest.R
 
@@ -54,7 +54,7 @@ class FilmActivity : AppCompatActivity() {
         filmIV.setImageBitmap(film.poster)
         genreTV.setText(film.genre)
         titleTV.setText(film.title)
-        fillAdvanceView(ratingLL, R.layout.rating_item, R.id.ratingNameTV, R.id.ratingMarkTV, film.rating)
+        fillAdvanceView(ratingLL, R.layout.rating_item, R.id.ratingNameTV, R.id.ratingMarkTV, film.ratings)
         releasedTV.setText(film.released)
         runtimeTV.setText(film.runtime)
         directorTV.setText(film.director)
@@ -66,31 +66,46 @@ class FilmActivity : AppCompatActivity() {
     }
 
     private fun fillAdvanceView(layout: LinearLayout, inflateRatingLayoutID: Int, sourceTVID: Int, valueTVID: Int, data: Array<Film.Rating>) {
-        for (rating in data) {
-            val lInflater = layoutInflater
-            val view = lInflater.inflate(inflateRatingLayoutID, null)
-            view.findViewById<TextView>(sourceTVID).text = rating.source
-            view.findViewById<TextView>(valueTVID).text = rating.value
-            layout.addView(view)
+        if(data != null) {
+            for (rating in data) {
+                val lInflater = layoutInflater
+                val view = lInflater.inflate(inflateRatingLayoutID, null, true)
+                var source = ""
+                if (rating.source.equals("Internet Movie Database")) {
+                    source = "IMBD"
+                } else {
+                    source = rating.source
+                }
+                view.findViewById<TextView>(sourceTVID).text = source
+                view.findViewById<TextView>(valueTVID).text = rating.value
+                val lParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+                lParams.rightMargin = 25
+                layout.addView(view, lParams)
+            }
         }
+
     }
 
     private fun fillAdvanceView(layout: LinearLayout, inflateWritersLayoutID: Int, roleTVID: Int, nameTVID: Int, data: ArrayList<Film.Writer>) {
         for (writer in data) {
             val lInflater = layoutInflater
-            val view = lInflater.inflate(inflateWritersLayoutID, null)
+            val view = lInflater.inflate(inflateWritersLayoutID, null, true)
             view.findViewById<TextView>(roleTVID).text = writer.role
             view.findViewById<TextView>(nameTVID).text = writer.name
-            layout.addView(view)
+            val lParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+            lParams.rightMargin = 25
+            layout.addView(view, lParams)
         }
     }
 
     private fun fillAdvanceView(layout: LinearLayout, inflateCastLayoutID: Int, imgID: Int, dataTVID: Int, data: List<String>) {
-        for (actor in data) {
+        for (actorName in data) {
             val lInflater = layoutInflater
             val view = lInflater.inflate(inflateCastLayoutID, null)
-            view.findViewById<TextView>(dataTVID).text = actor
-            layout.addView(view)
+            view.findViewById<TextView>(dataTVID).text = actorName
+            val lParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+            lParams.rightMargin = 25
+            layout.addView(view, lParams)
         }
     }
 }

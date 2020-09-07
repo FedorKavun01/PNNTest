@@ -12,7 +12,7 @@ data class Film(@SerializedName("Genre") val genre: String,
                 @SerializedName("Poster")private val posterURL: String,
                 @SerializedName("Title") val title: String,
                 @SerializedName("imdbRating")val imdbRating: String,
-                @SerializedName("Ratings") val rating : Array<Rating>,
+                @SerializedName("Ratings") val ratings : Array<Rating>,
                 @SerializedName("Released") val released: String,
                 @SerializedName("Runtime") val runtime: String,
                 @SerializedName("Plot") val story: String,
@@ -49,13 +49,25 @@ data class Film(@SerializedName("Genre") val genre: String,
             writersList!!.add(Writer(name, role))
         }
 
+//
+//        for (r in ratings) {
+//            var source: String = ""
+//            var value: String = ""
+//            if (r.source.equals("Internet Movie Database")) {
+//                source = "IMBD"
+//            } else {
+//                source = r.source
+//            }
+//            value = r.value
+//            ratingList!!.add(Rating(source, value))
+//        }
     }
 
     companion object {
         var i: Int = 0
     }
 
-    data class Rating(@SerializedName("Source") val source: String, @SerializedName("Value") val value: String)
+    data class Rating(@SerializedName("Source") var source: String, @SerializedName("Value") val value: String)
 
     data class Writer(val name: String, val role: String)
 }
