@@ -32,7 +32,5 @@ class FilmViewModel {
         return films!!
     }
 
-    // TODO: 03.09.2020 Add fun to get one film by id
-
     fun getFilmById(id: Int) = films!![id]
 }

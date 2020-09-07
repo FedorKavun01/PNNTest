@@ -39,10 +39,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
     }
 
-    // TODO: 03.09.2020 Add fun onclick 
-
     // TODO: 04.09.2020 Change this list to RecyclerView (not require)
-    // TODO: 05.09.2020 Change two-colored TV to LL with two TV
     
     fun createView(film: Film): View {
         val lInflater = layoutInflater
@@ -52,7 +49,6 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         view.findViewById<TextView>(R.id.titleTV).setText(film.title)
         view.findViewById<TextView>(R.id.directorTV).setText(film.director)
         val imbdTV = view.findViewById<TextView>(R.id.imbdTV)
-        // TODO: 07.09.2020 Change 
         imbdTV.setText(" ${film.imdbRating}")
         view.id = film.id
         view.setOnClickListener(this)
