@@ -3,4 +3,9 @@
     <string name="heading">The library of my favorite movies</string>
     <string name="imbd">IMBD: </string>
     <string name="mainActivityLable">Movies</string>
+    <string name="released">Released</string>
+    <string name="runtime">Runtime</string>
+    <string name="story">Story</string>
+    <string name="writers">Writers</string>
+    <string name="cast">Cast</string>
 </resources>
