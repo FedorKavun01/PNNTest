@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.core.view.marginLeft
 import com.example.pnntest.Model.Film
 import com.example.pnntest.R
+import com.example.pnntest.ViewModel.FilmAdapter
 
 class FilmActivity : AppCompatActivity() {
 
@@ -45,8 +46,8 @@ class FilmActivity : AppCompatActivity() {
     }
 
     fun getFilm(): Film {
-        val id: Int = intent.extras!!.get("id") as Int
-        val film = MainActivity.filmViewModel.getFilmById(id)
+        val position: Int = intent.extras!!.get(MainActivity.POSITION_TAG) as Int
+        val film = FilmAdapter.getFilmByPosition(position)
         return film
     }
 
