@@ -4,7 +4,7 @@
     android:layout_height="550dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/filmItem"
-    android:layout_marginStart="15dp">
+    android:layout_marginStart="10dp">
 
     <ImageView
         android:id="@+id/imgView"

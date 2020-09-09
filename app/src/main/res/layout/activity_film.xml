@@ -39,29 +39,22 @@
             android:layout_marginHorizontal="15dp"
             android:textSize="25sp" />
 
-        <HorizontalScrollView
-            android:id="@+id/ratingHS"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ratingRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/titleTV"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            android:scrollbars="none">
-            <LinearLayout
-                android:id="@+id/ratingLL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:dividerPadding="10dp"/>
-        </HorizontalScrollView>
+            android:scrollbars="none"/>
 
         <LinearLayout
             android:id="@+id/releasedLL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/ratingHS"
+            app:layout_constraintTop_toBottomOf="@id/ratingRV"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="15dp">
@@ -83,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/ratingHS"
+            app:layout_constraintTop_toBottomOf="@id/ratingRV"
             app:layout_constraintLeft_toRightOf="@id/releasedLL"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp">
@@ -159,16 +152,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/writers"
                 android:textStyle="bold"/>
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/writersRV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none">
-                <LinearLayout
-                    android:id="@+id/writersLL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"/>
-            </HorizontalScrollView>
+                android:scrollbars="none"/>
         </LinearLayout>
 
         <LinearLayout
@@ -187,21 +175,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cast"
                 android:textStyle="bold"/>
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/castRV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none">
-                <LinearLayout
-                    android:id="@+id/castLL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"/>
-            </HorizontalScrollView>
+                android:scrollbars="none"/>
         </LinearLayout>
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

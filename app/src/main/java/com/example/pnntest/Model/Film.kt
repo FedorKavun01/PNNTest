@@ -12,7 +12,7 @@ data class Film(@SerializedName("Genre") val genre: String,
                 @SerializedName("Poster")private val posterURL: String,
                 @SerializedName("Title") val title: String,
                 @SerializedName("imdbRating")val imdbRating: String,
-                @SerializedName("Ratings") val ratings : Array<Rating>,
+                @SerializedName("Ratings")private val ratings : Array<Rating>,
                 @SerializedName("Released") val released: String,
                 @SerializedName("Runtime") val runtime: String,
                 @SerializedName("Plot") val story: String,
@@ -20,21 +20,20 @@ data class Film(@SerializedName("Genre") val genre: String,
                 @SerializedName("Actors") private val actors: String) {
     var poster: Bitmap? = null
     var writersList: ArrayList<Writer>? = null
-    var actorsList: List<String>? = null
-    var id: Int = 0
+    var actorsList: ArrayList<String>? = null
+    var ratingsList: ArrayList<Rating>? = null
 
     fun prepareFilm() {
-        id = i++
         if (posterURL!= "N/A") {
             poster = runBlocking {
                 Picasso.get().load(posterURL).get()
             }
         }
         writersList = ArrayList()
-        actorsList = actors.split(", ")
+        actorsList = ArrayList(actors.split(", "))
         val writersStrs = writers.split(", ")
-        var name: String = ""
-        var role: String = ""
+        var name = ""
+        var role = ""
         for (writerStr in writersStrs) {
             if (writerStr.contains(" (")) {
                 name = writerStr.split(" (").get(0)
@@ -49,22 +48,20 @@ data class Film(@SerializedName("Genre") val genre: String,
             writersList!!.add(Writer(name, role))
         }
 
-//
-//        for (r in ratings) {
-//            var source: String = ""
-//            var value: String = ""
-//            if (r.source.equals("Internet Movie Database")) {
-//                source = "IMBD"
-//            } else {
-//                source = r.source
-//            }
-//            value = r.value
-//            ratingList!!.add(Rating(source, value))
-//        }
-    }
-
-    companion object {
-        var i: Int = 0
+        ratingsList = ArrayList()
+        if (ratings != null) {
+            for (r in ratings) {
+                var source: String = ""
+                var value: String = ""
+                if (r.source.equals("Internet Movie Database")) {
+                    source = "IMBD"
+                } else {
+                    source = r.source
+                }
+                value = r.value
+                ratingsList!!.add(Rating(source, value))
+            }
+        }
     }
 
     data class Rating(@SerializedName("Source") var source: String, @SerializedName("Value") val value: String)
